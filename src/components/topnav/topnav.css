@@ -1,0 +1,35 @@
+.logo {
+  padding: 10px !important;
+  color: whitesmoke !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 20px !important;
+  font-weight: 100 !important;
+}
+.list {
+  margin-top: 10px;
+}
+.listitems {
+  padding: 5px !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  color: whitesmoke !important;
+  text-decoration: none;
+}
+
+.listitems:hover {
+  background-color: rgba(225, 228, 92, 0.993);
+  color: black !important;
+  text-decoration: none !important;
+}
+.navbar {
+  background: rgb(75, 91, 116);
+  background: linear-gradient(
+    45deg,
+    rgba(75, 91, 116, 1) 62%,
+    rgba(60, 96, 149, 1) 67%,
+    rgba(74, 104, 129, 1) 93%
+  );
+}

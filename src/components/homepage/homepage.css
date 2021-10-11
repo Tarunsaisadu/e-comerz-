@@ -1,0 +1,124 @@
+/* .homepage {
+  background-color: blue;
+} */
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+.backgroundimg {
+  background-image: url("https://images.unsplash.com/photo-1561715276-a2d087060f1d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  height: 100vh !important;
+  width: 100% !important;
+  position: relative;
+}
+.herotitle {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Abril Fatface", cursive;
+  font-size: 100px !important;
+}
+@media screen and (max-width: 425px) {
+  .herotitle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .herotitle {
+    width: 300px;
+    margin-top: 1px;
+    font-size: 40px !important;
+  }
+}
+@media screen and (max-width: 425px) {
+  .greet {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .greet {
+    width: 100px;
+    margin-top: 30px;
+    margin-left: 15px !important;
+    margin-bottom: 0% !important;
+    font-size: 20px !important;
+  }
+}
+.greet {
+  margin-top: 80px;
+  font-family: cursive;
+}
+.homebtn {
+  position: absolute;
+  top: 53%;
+  /* left: 40%; */
+  right: 10%;
+}
+.homebtn {
+  border-radius: 4px;
+  background-color: #dff41e !important;
+  border: none;
+  color: #111010 !important;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+
+  width: 200px;
+  height: 70px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.homebtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.homebtn span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.homebtn:hover span {
+  padding-right: 25px;
+}
+
+.homebtn:hover span:after {
+  opacity: 2;
+  right: 0;
+}
+.logoutbtn {
+  height: 40px;
+  width: 20px !important;
+  cursor: pointer;
+
+  margin-left: 50px !important;
+}
+
+@media screen and (max-width: 425px) {
+  .logoutbtn {
+    width: 60px !important;
+    height: 40px !important;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .logoutbtn {
+    margin-top: 70px;
+    margin-left: 10px !important;
+  }
+}

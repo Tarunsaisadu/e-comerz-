@@ -1,0 +1,43 @@
+.filters {
+  flex: 1;
+  height: calc(100vh - 50px);
+  background-color: rgb(104, 134, 184);
+  color: rgb(245, 245, 245) !important;
+  position: sticky;
+  top: 50px;
+}
+.filterwrapper {
+  padding: 20px;
+  color: rgb(231, 231, 231);
+}
+.filtermenu {
+  margin: bottom 10px;
+}
+.filterTitle {
+  font-size: 25px;
+  color: white;
+}
+.filterList {
+  list-style: none;
+  padding: 5px;
+}
+.filterlistitems {
+  padding: 15px !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.filterlistitems:hover {
+  background-color: rgba(246, 250, 11, 0.993);
+  color: black;
+}
+.filterlistitemsnohover {
+  padding: 15px !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
