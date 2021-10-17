@@ -1,6 +1,7 @@
 import React from "react";
 import "./sidebar.css";
 import { Feedback, Chat } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 const Sidebar = () => {
   return (
     <div className="sidebar">
@@ -45,15 +46,25 @@ const Sidebar = () => {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Quick Menu</h3>
           <ul className="sidebarList">
-            <li className="sidebarlistitems">
-              <lord-icon
-                src="https://cdn.lordicon.com/dxjqoygy.json"
-                trigger="loop"
-                colors="primary:#121331,secondary:#08a88a"
-                style={{ width: "30px", height: "37px" }}
-              ></lord-icon>
-              Users
-            </li>
+            <Link
+              to="/users"
+              style={{ textDecoration: "none", color: "#555555" }}
+            >
+              <li className="sidebarlistitems">
+                <lord-icon
+                  className="sidebarIcons"
+                  src="https://cdn.lordicon.com/dxjqoygy.json"
+                  trigger="loop"
+                  colors="primary:#121331,secondary:#08a88a"
+                  style={{
+                    width: "30px",
+                    height: "37px",
+                    paddingRight: "10px",
+                  }}
+                ></lord-icon>
+                Users
+              </li>
+            </Link>
             <li className="sidebarlistitems ">
               <lord-icon
                 className="sidebarIcons"

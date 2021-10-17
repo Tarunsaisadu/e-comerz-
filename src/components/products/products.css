@@ -6,7 +6,7 @@
 }
 .product_container {
   flex: 4;
-  margin-top: 50px;
+  margin-top: 80px !important;
   margin-left: 30px !important;
   margin-bottom: 0;
   padding-bottom: 0;
@@ -28,12 +28,20 @@
   align-items: center;
   margin: 0 20px;
   margin-bottom: 20px;
+  border-bottom: gray solid 1px;
 }
 .cartItemImg {
   border-radius: 50%;
   width: 50px;
   height: 50px;
   object-fit: cover;
+  margin-top: 10px !important;
+  margin-left: 10px !important;
+  margin-right: 30px !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
 }
 
 .cartItemDetail {
@@ -41,9 +49,24 @@
   flex: 1;
   padding: 0 20px;
   flex-direction: column;
+  margin-top: 10px !important;
+  margin-left: 10px !important;
+  margin-right: 30px !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+.gotocartbtn {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+  margin-left: 100px !important;
+}
+.cartdeletebtn {
+  margin-right: 15px !important;
 }
 .summary {
-  width: 20%;
+  width: 15%;
   display: flex;
   float: right;
 }
@@ -78,16 +101,43 @@
   }
 }
 .searchbar {
-  margin: 10px 0px;
+  margin: 10px 0px !important;
   display: flex;
   align-items: center;
-  position: sticky;
+  padding: 5px 5px !important;
+  margin-left: -80px !important;
   border-radius: 50px;
-  margin-top: 30px;
+  margin-top: 15px !important;
+  -webkit-box-shadow: -2px 3px 12px 8px rgba(110, 175, 164, 0.76);
+  box-shadow: -2px 3px 12px 8px rgba(129, 187, 177, 0.76);
 }
 #cartbutton {
-  margin-top: 30px;
+  margin-top: 18px !important;
+  margin-left: 130px !important;
 }
+.cartbuttontext {
+  padding: 5px 5px !important;
+}
+.cartbuttonicon {
+  padding: 2px 2px !important;
+}
+
 .herocont {
   background-color: #f5f8fa !important;
 }
+
+.jumbodiv {
+  margin-top: 250px !important;
+  margin-left: 30% !important;
+  display: flex;
+  width: 550px;
+  height: 300px;
+  justify-content: center;
+  text-align: center;
+}
+/* .searchandcart {
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+  border: 0 !important;
+  margin-bottom: 10px !important;
+} */

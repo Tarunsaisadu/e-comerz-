@@ -15,7 +15,7 @@ const Context = ({ children }) => {
     description: faker.commerce.productDescription(),
     material: faker.commerce.productMaterial(),
     department: faker.commerce.department(),
-    color: faker.commerce.color(),
+    forReturn: faker.datatype.boolean(),
     inStock: faker.random.arrayElement([0, 3, 5, 6, 7]),
     fastDelivery: faker.datatype.boolean(),
     ratings: faker.random.arrayElement([1, 2, 3, 4, 5]),
@@ -26,10 +26,12 @@ const Context = ({ children }) => {
     cart: [],
   });
   const [productState, productDispatch] = useReducer(productReducer, {
+    forReturn: false,
     byStock: false,
     byFastDelivery: false,
     byRating: 0,
     searchQuery: "",
+
     isCheckout: false,
   });
 

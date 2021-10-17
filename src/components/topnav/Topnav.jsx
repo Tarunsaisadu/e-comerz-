@@ -1,83 +1,83 @@
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import { CartState } from "../context/Context";
+import { AiFillDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
+
 import "./topnav.css";
-export default function Topnav() {
+const Topnav = ({ Logout }) => {
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" className="navbar fixed-top ">
-        <Link to="/">
-          <Navbar.Brand className="logo" href="#home">
-            S'mart Shopping
-          </Navbar.Brand>
-        </Link>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mx-auto list">
-            <Link to="/">
-              <Nav.Link className="listitems" href="#features">
-                Home
-              </Nav.Link>
-            </Link>
-            <Link to="/products">
-              <Nav.Link className="listitems" href="#pricing">
-                Products
-              </Nav.Link>
-            </Link>
-            <Link to="/backoffice">
-              <Nav.Link className="listitems" href="#pricing">
-                Backoffice
-              </Nav.Link>
-            </Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light  py-3 shadow-sm  topnav">
+        <div class="container">
+          <Link to="/">
+            <a className="navbar-brand  mx-5 px-5" href="#">
+              Maya shopping
+            </a>
+          </Link>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
+              <li class="nav-item active px-3">
+                <Link to="/">
+                  <a class="nav-link" href="#">
+                    Home <span class="sr-only">(current)</span>
+                  </a>
+                </Link>
+              </li>
+              <li class="nav-item px-3">
+                <Link to="products">
+                  <a class="nav-link" href="#">
+                    Products
+                  </a>
+                </Link>
+              </li>
+              <li class="nav-item px-3">
+                <Link to="sale">
+                  <a class="nav-link" href="#">
+                    New Sale
+                  </a>
+                </Link>
+              </li>
+              <li class="nav-item px-3">
+                <Link to="backoffice">
+                  <a class="nav-link" href="#">
+                    Back Office
+                  </a>
+                </Link>
+              </li>
+            </ul>
+            <div className="navbuttons ">
+              <a
+                href="#"
+                className="btn btn-outline-dark px-1 mx-2"
+                onClick={Logout}
+              >
+                <i class="fa fa-sign-out me-1" aria-hidden="true"></i> signout
+              </a>
+
+              {/* <span>
+                <a href="#" className="btn btn-outline-dark px-1">
+                  <i class="fa fa-shopping-cart me-1" aria-hidden="true"></i>{" "}
+                  cart(0)
+                </a>
+              </span> */}
+            </div>
+          </div>
+        </div>
+      </nav>
     </div>
   );
-}
+};
 
-// import React, { useState, useEffect } from "react";
-// import "./topnav.css";
-// import { Navbar, Col } from "react-bootstrap";
-// export default function Topnav() {
-//   const [toggleMenu, setToggleMenu] = useState(false);
-//   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-//   const toggleNav = () => {
-//     setToggleMenu(!toggleMenu);
-//   };
-
-//   useEffect(() => {
-//     const changeWidth = () => {
-//       setScreenWidth(window.innerWidth);
-//     };
-
-//     window.addEventListener("resize", changeWidth);
-
-//     return () => {
-//       window.removeEventListener("resize", changeWidth);
-//     };
-//   }, []);
-
-//   return (
-//     <div>
-//       <nav>
-//         <div className="leftpart">
-//           {/* <h3 className="logo">S'mart Shopping</h3> */}
-//         </div>
-//         <div className="rightpart">
-//           {(toggleMenu || screenWidth > 500) && (
-//             <ul className="list">
-//               <li className="items">Home</li>
-//               <li className="items">Products</li>
-//               <li className="items">Back office</li>
-//             </ul>
-//           )}
-//         </div>
-//         <button onClick={toggleNav} className="btn">
-//           button
-//         </button>
-//       </nav>
-//     </div>
-//   );
-// }
+export default Topnav;

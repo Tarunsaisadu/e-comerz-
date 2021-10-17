@@ -1,0 +1,138 @@
+.sidebarcont {
+  width: 18%;
+  margin-top: 0px !important;
+  position: fixed;
+  top: 70px;
+}
+.userpagecont {
+  margin-top: 100px !important;
+  margin-left: 240px !important;
+  padding: 20px !important;
+}
+.userTitleContaiiner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.userAddButton {
+  width: 80px;
+  border: none;
+  padding: 5px !important;
+  background-color: #a4d6cd;
+  border-radius: 5px;
+  cursor: pointer;
+  color: black;
+  font-size: 16px;
+}
+.userDetailsContainer {
+  display: flex;
+  margin-top: 20px !important;
+}
+.userShow {
+  flex: 1;
+  padding: 20px !important;
+  -webkit-box-shadow: 1px 4px 12px 9px rgba(159, 168, 168, 0.82);
+  box-shadow: 1px 4px 12px 9px rgba(190, 191, 192, 0.82);
+}
+.userUpdate {
+  flex: 2;
+  padding: 20px !important;
+  -webkit-box-shadow: 1px 4px 12px 9px rgba(159, 168, 168, 0.82);
+  box-shadow: 1px 4px 12px 9px rgba(190, 191, 192, 0.82);
+  margin-left: 20px !important;
+}
+.userShowTop {
+  display: flex;
+  align-items: center;
+}
+.userShowImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.userShowTopTitle {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px !important;
+}
+.userShowUsername {
+  font-weight: 600;
+}
+.userShowUserTitle {
+  font-weight: 300;
+}
+.userShowBottom {
+  margin-top: 20px !important;
+}
+.userShowTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(112, 112, 112);
+}
+.userShowInfo {
+  display: flex;
+  align-items: center;
+  margin: 20px 0px !important;
+  color: rgb(56, 55, 55);
+}
+.userShowIcon {
+  font-size: 16px !important;
+
+  padding-right: 10px !important;
+}
+.userShowInfoTitle {
+  margin-left: 10px !important;
+}
+.userUpdateImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 20px !important;
+}
+.userUpdateUpload {
+  cursor: pointer;
+}
+.UserUpdateTitle {
+  font-size: 24px;
+  font-weight: 600;
+}
+.userUpdateForm {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px !important;
+}
+.userUpdateInput {
+  border: none;
+  width: 250px;
+  height: 30px;
+  border-bottom: 1px solid gray;
+}
+.userUpdateRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.userUpdateUpload {
+  display: flex;
+  align-items: center;
+}
+.userUpdateItem {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px !important;
+}
+.userUpdateItem > label {
+  margin-bottom: 5px !important;
+  font-size: 14px;
+}
+.userUpdateButton {
+  border-radius: 5px;
+  border: none;
+  padding: 5px !important;
+  cursor: pointer;
+  background-color: rgb(0, 153, 255);
+  color: white;
+  font-weight: 600;
+}

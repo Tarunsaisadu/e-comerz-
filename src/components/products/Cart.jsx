@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { ListGroup, Row, Col, Form, Image, Button } from "react-bootstrap";
+import {
+  ListGroup,
+  Row,
+  Col,
+  Form,
+  Image,
+  Button,
+  Card,
+} from "react-bootstrap";
 import { AiFillDelete } from "react-icons/ai";
 import { CartState } from "../context/Context";
 import Rating from "./Rating";
 import PayPal from "../PayPal";
 import { Link } from "react-router-dom";
+import StripeCheckout from "react-stripe-checkout";
+import "./cart.css";
+
 const Cart = () => {
   const {
     state: { cart },
@@ -20,25 +31,40 @@ const Cart = () => {
     );
   }, [cart]);
 
+  const onToken = (token) => {
+    console.log(token);
+  };
+
   return (
     <div className="cart">
-      <div className="product_container">
+      <div className="cart_container">
         <ListGroup>
           {cart.map((prod) => (
             <ListGroup.Item key={prod.id}>
               <Row>
                 <Col md={2}>
-                  <Image src={prod.image} alt={prod.name} fluid rounded />
+                  <Image
+                    className="cartimage"
+                    src={prod.image}
+                    alt={prod.name}
+                    fluid
+                    rounded
+                  />
                 </Col>
                 <Col md={2}>
-                  <span>{prod.name}</span>
+                  <h3 className="carttitle">{prod.name}</h3>
                 </Col>
-                <Col md={2}>€{prod.price}</Col>
                 <Col md={2}>
-                  <Rating rating={prod.ratings} />
+                  <p className="carttitle">€{prod.price}</p>
+                </Col>
+                <Col md={2}>
+                  <p className="carttitle">
+                    <Rating rating={prod.ratings} />
+                  </p>
                 </Col>
                 <Col md={2}>
                   <Form.Control
+                    className="carttitle"
                     as="select"
                     value={prod.qty}
                     onChange={(e) =>
@@ -58,6 +84,7 @@ const Cart = () => {
                 </Col>
                 <Col md={2}>
                   <Button
+                    className="carttitle"
                     type="button"
                     variant="light"
                     onClick={() =>
@@ -67,31 +94,58 @@ const Cart = () => {
                       })
                     }
                   >
-                    <AiFillDelete fontSize="20px" />
+                    <lord-icon
+                      className="carttitle"
+                      src="https://cdn.lordicon.com/gsqxdxog.json"
+                      trigger="hover"
+                      colors="primary:#121331,secondary:#08a88a"
+                      style={{
+                        width: "24px",
+                        height: "24px",
+                        top: "-4px",
+                      }}
+                    ></lord-icon>
                   </Button>
                 </Col>
               </Row>
             </ListGroup.Item>
           ))}
         </ListGroup>
-      </div>
-      <div className="filters summary">
-        <span className="title">Subtotal({cart.length})</span>
-        <span style={{ fontWeight: 700, fontSize: 20 }}>Total:€{total}</span>
-        {/* {checkout ? (
-          <PayPal />
-        ) : ( */}
-        <Link to="/checkout">
-          <Button
-            onClick={() => {
-              // setCheckout(true);
-            }}
-          >
-            CHECK OUT
-          </Button>
-        </Link>
-        {/* <PayPal /> */}
-        {/* )} */}
+        <div className="summary-container">
+          <div className="ordersummarycard">
+            <Card
+              border="dark"
+              style={{ width: "15rem", height: "18rem", float: "right" }}
+            >
+              <Card.Header>
+                {" "}
+                <h6 className="carttitle">Order Summary</h6>
+              </Card.Header>
+              <Card.Body>
+                <Card.Title>
+                  <p className="carttitle">Subtotal :({cart.length}) in cart</p>
+                </Card.Title>
+                <Card.Text>
+                  <span
+                    className="carttitle"
+                    style={{ fontWeight: 700, fontSize: 20 }}
+                  >
+                    Total:€{total}
+                  </span>
+
+                  <StripeCheckout
+                    className="paymentbtn"
+                    token={onToken}
+                    name="Maya Shopping"
+                    currency="EUR"
+                    amount={total * 100}
+                    stripeKey="pk_test_51JksifHPGT6xDKKvBBeUHi53KN3hOotr8I4rWRtOF65DBHwIyUG4Y6cbv0liAsLEVCWeMUfjOjLcYvAq15GCgGtU00EmN6HDM5"
+                  />
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+        </div>
       </div>
     </div>
   );

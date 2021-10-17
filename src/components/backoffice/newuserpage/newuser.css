@@ -1,0 +1,54 @@
+.sidebarcont {
+  width: 18%;
+  margin-top: 0px !important;
+  position: fixed;
+  top: 70px;
+}
+.newuserContainer {
+  margin-top: 150px !important;
+  margin-left: 280px !important;
+  width: 80%;
+  height: 700px;
+}
+.newUserForm {
+  display: flex;
+  flex-wrap: wrap;
+}
+.newUserItem {
+  width: 400px;
+
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px !important;
+  margin-right: 20px !important;
+}
+.newUserItem > .label {
+  margin-bottom: 10px !important;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(151, 150, 150);
+}
+.newUserItem > .input {
+  height: 40px;
+  padding: 10px !important;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+.newUserSelect {
+  margin-top: 40px !important;
+  width: 400px;
+  height: 40px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+.newUserButton {
+  width: 200px;
+  border: none;
+  background-color: rgb(55, 168, 149);
+  color: white;
+  padding: 7px 10px !important;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-top: 30px !important;
+  cursor: pointer;
+}

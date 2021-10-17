@@ -20,7 +20,15 @@ const Products = () => {
     state: { products, cart },
     dispatch,
     productDispatch,
-    productState: { sort, byStock, byFastDelivery, byRating, searchQuery },
+    productState: {
+      sort,
+
+      byStock,
+      byFastDelivery,
+      byRating,
+      searchQuery,
+      forReturn,
+    },
   } = CartState();
 
   const changeProducts = () => {
@@ -43,90 +51,26 @@ const Products = () => {
         (prod) => prod.ratings >= byRating
       );
     }
+    if (forReturn) {
+      sortedProducts = sortedProducts.filter((prod) => prod.forReturn);
+    }
 
     if (searchQuery) {
       sortedProducts = sortedProducts.filter((prod) =>
         prod.name.toLowerCase().includes(searchQuery)
       );
     }
+
     console.log(sortedProducts);
     return sortedProducts;
   };
   console.log(byStock, byFastDelivery, sort, byRating, searchQuery);
   return (
     <div className="herocont">
-      <div>
-        {/* <Container> */}
-        {/* <Row>
-            <FormControl
-              style={{ width: 600, bottom: "20px" }}
-              type="search"
-              placeholder="search a product you are looking for..."
-              className="m-auto"
-              onChange={(e) => {
-                productDispatch({
-                  type: "FILTER_BY_SEARCH",
-                  payload: e.target.value,
-                });
-              }}
-            />
-          </Row> */}
-        {/* <Dropdown
-            alignRight
-            style={{ paddingBottom: " 3.9525rem", left: "80px" }}
-          >
-            <Dropdown.Toggle variant="outline-dark">
-              <Badge>{cart.length}</Badge>
-              <GrCart style={{ color: "white" }} />
-            </Dropdown.Toggle>
-            <Dropdown.Menu style={{ minWidth: 370 }}>
-              {cart.length > 0 ? (
-                <>
-                  {cart.map((product) => (
-                    <span className="cartitem" key={product.id}>
-                      <img
-                        src={product.image}
-                        className="cartItemImg"
-                        alt={product.name}
-                      />
-                      <div className="cartItemDetail">
-                        <span>{product.name}</span>
-                        <span>€{product.price.split(".")[0]}</span>
-                      </div>
-                      <AiFillDelete
-                        fontSize="20px"
-                        style={{ cursor: "pointer" }}
-                        onClick={() =>
-                          dispatch({
-                            type: "REMOVE_FROM_CART",
-                            payload: product,
-                          })
-                        }
-                      />
-                    </span>
-                  ))}
-                  <Link to="/cart">
-                    <Button
-                      style={{
-                        width: "95%",
-                        margin: "0 10px",
-                      }}
-                    >
-                      Go To Cart
-                    </Button>
-                  </Link>
-                </>
-              ) : (
-                <span style={{ padding: 10 }}> cart is empty</span>
-              )}
-            </Dropdown.Menu>
-          </Dropdown> */}
-        {/* </Container> */}
-      </div>
       <div className="main_container">
-        <FilterProducts />
+        <FilterProducts product={products} />
         <div className="product_container">
-          <div>
+          <div className="searchandcart">
             <Row style={{ margin: 0 }}>
               <FormControl
                 style={{ width: 300 }}
@@ -145,16 +89,33 @@ const Products = () => {
                 id="cartbutton"
                 style={{
                   paddingBottom: " 3.9525rem",
-                  left: "80px",
+
+                  left: "20px",
                 }}
               >
-                <Dropdown.Toggle variant="outline-success">
-                  <Badge style={{ width: "14px", backgroundColor: "darkred" }}>
+                <Dropdown.Toggle
+                  style={{ backgroundColor: "#A4D6CD" }}
+                  color="white"
+                >
+                  <Badge
+                    className="cartbuttontext"
+                    style={{
+                      width: "14px",
+                      fontSize: "14px",
+                      backgroundColor: "black",
+                    }}
+                  >
                     {cart.length}
                   </Badge>
-                  <GrCart style={{ color: "white" }} />
+                  <GrCart
+                    className="cartbuttonicon"
+                    style={{ color: "white" }}
+                  />
+                  <span className="cartbuttontext" style={{ color: "black" }}>
+                    Cart
+                  </span>
                 </Dropdown.Toggle>
-                <Dropdown.Menu style={{ minWidth: 370 }}>
+                <Dropdown.Menu style={{ minWidth: 380 }}>
                   {cart.length > 0 ? (
                     <>
                       {cart.map((product) => (
@@ -169,8 +130,9 @@ const Products = () => {
                             <span>€{product.price.split(".")[0]}</span>
                           </div>
                           <AiFillDelete
+                            className="cartdeletebtn"
                             fontSize="20px"
-                            style={{ cursor: "pointer" }}
+                            style={{ cursor: "pointer", marginRight: "10px" }}
                             onClick={() =>
                               dispatch({
                                 type: "REMOVE_FROM_CART",
@@ -180,16 +142,22 @@ const Products = () => {
                           />
                         </span>
                       ))}
-                      <Link to="/cart">
-                        <Button
-                          style={{
-                            width: "95%",
-                            margin: "0 10px",
-                          }}
-                        >
-                          Go To Cart
-                        </Button>
-                      </Link>
+
+                      <div className="gotocartbtn">
+                        <Link to="/cart">
+                          <Button
+                            style={{
+                              height: "30px",
+                              width: "70%",
+                              marginLeft: "20px",
+                              backgroundColor: "#A4D6CD",
+                              color: "black",
+                            }}
+                          >
+                            Go To Cart
+                          </Button>
+                        </Link>
+                      </div>
                     </>
                   ) : (
                     <span style={{ padding: 10 }}> cart is empty</span>

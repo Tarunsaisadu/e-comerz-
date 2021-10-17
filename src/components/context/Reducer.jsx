@@ -16,6 +16,7 @@ export const cartReducer = (state, action) => {
       };
     case "CLEAR_FILTERS":
       return {
+        forReturn: false,
         byStock: false,
         byFastDelivery: false,
         byRating: 0,
@@ -40,8 +41,11 @@ export const productReducer = (state, action) => {
       return { ...state, byRating: action.payload };
     case "FILTER_BY_SEARCH":
       return { ...state, searchQuery: action.payload };
+    case "FILTER_BY_RETURN":
+      return { ...state, forReturn: !state.forReturn };
     case "CLEAR_FILTERS":
       return {
+        forReturn: false,
         byStock: false,
         byFastDelivery: false,
         byRating: 0,

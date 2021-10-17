@@ -9,48 +9,12 @@ const SingleProduct = ({ product }) => {
   const {
     state: { cart },
     dispatch,
+
+    productDispatch,
   } = CartState();
   console.log(cart);
 
   return (
-    // <div>
-    //   <div className="cardscontainer">
-    //     <div class="card" style={{ paddingBottom: 0 }}>
-    //       <img
-    //         src={product.image}
-    //         alt="Denim Jeans"
-    //         style={{
-    //           width: "100%",
-    //           padding: "0px",
-    //           paddingBottom: "0px",
-    //           paddingRight: "3px",
-
-    //           borderRadius: "10%",
-    //         }}
-    //       />
-    //       <h5>{product.name}</h5>
-    //       <p class="price">
-    //         <Badge
-    //           pill
-    //           variant="dark"
-    //           style={{ width: "20%", justifyContent: "center" }}
-    //         >
-    //           €{product.price.split(".")[0]}
-    //         </Badge>
-    //       </p>
-    //       <div style={{ paddingBottom: 0 }}>
-    //         {product.fastDelivery ? (
-    //           <div>FAST Delivery</div>
-    //         ) : (
-    //           <div> 3days delivery</div>
-    //         )}
-    //         <Rating rating={product.ratings} />
-    //         <p></p>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
-    // NEW MODERN CARD
     <div>
       <div class="cardcontainer">
         <div class="card">
@@ -81,12 +45,13 @@ const SingleProduct = ({ product }) => {
             </div>
             <div class="product-properties">
               {product.fastDelivery ? (
-                <div>
+                <div className="deliverydiv">
                   <Badge
+                    className="deliverybadge"
                     pill
                     variant="dark"
                     style={{
-                      width: "50%",
+                      width: "60%",
                       fontSize: "18px",
                       marginTop: "17px",
                     }}
@@ -95,8 +60,15 @@ const SingleProduct = ({ product }) => {
                   </Badge>
                 </div>
               ) : (
-                <div> 3 days delivery</div>
+                <div className="deliverydiv"> 3 days delivery</div>
               )}
+              <span className="returndiv">
+                {product.forReturn ? (
+                  <img src="https://img.icons8.com/color/28/000000/return.png" />
+                ) : (
+                  <img src="https://img.icons8.com/ios/30/000000/not-applicable.png" />
+                )}
+              </span>
               <span id="cartbtns">
                 {cart.some((p) => p.id === product.id) ? (
                   <Button
@@ -129,7 +101,7 @@ const SingleProduct = ({ product }) => {
                     disabled={!product.inStock}
                   >
                     {!product.inStock ? (
-                      <BiBlock />
+                      <BiBlock style={{ color: "red" }} />
                     ) : (
                       <lord-icon
                         src="https://cdn.lordicon.com/mecwbjnp.json"
@@ -141,7 +113,7 @@ const SingleProduct = ({ product }) => {
                   </Button>
                 )}
               </span>
-              <span class="product-price">${product.price.split(".")[0]}</span>
+              <span class="product-price">€{product.price.split(".")[0]}</span>
             </div>
           </div>
         </div>

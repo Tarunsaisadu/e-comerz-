@@ -3,11 +3,13 @@
   display: flex;
   -ms-flex-align: center;
   justify-content: space-between;
+  margin-top: 8px !important;
+  margin-bottom: 0px !important;
 }
 .featuredItem {
   flex: 1;
   margin: 70px 20px !important ;
-  padding: 30px !important;
+  padding: 20px !important;
 
   border-radius: 10px;
   cursor: pointer;

@@ -1,6 +1,6 @@
 * {
   margin: 0%;
-  padding: 0;
+  padding: 0%;
   box-sizing: border-box;
   font-family: montserrat, sans-serif;
 }
@@ -12,7 +12,7 @@ button {
   outline: none;
 }
 .logindiv {
-  height: 100vh;
+  height: 100vh !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,27 +38,31 @@ form .form-inner {
   position: relative;
   display: block;
   background: rgba(40, 57, 101, 0.9);
-  background: transparent;
-  padding: 30px;
+  opacity: 0.8;
+  padding: 10px !important;
   z-index: 2;
+  justify-content: center;
+  width: 350px;
+  height: 350px;
 }
 form .form-inner h2 {
-  color: blueviolet;
+  color: rgb(226, 222, 230);
   font-size: 28px;
   font-weight: 500;
-  margin-bottom: 30px;
+  margin-bottom: 30px !important;
 }
 form .form-inner .form-group {
   display: block;
-  width: 300px;
-  margin-bottom: 15px;
+  width: 330px;
+  margin-bottom: 15px !important;
 }
 
 .form-inner .form-group label {
   display: block;
-  color: blue;
+  color: rgb(237, 237, 243);
   font-size: 12px;
-  margin-bottom: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 3px !important;
   transition: 0.5s;
 }
 .form-inner .form-group :focus-within label {
@@ -67,8 +71,8 @@ form .form-inner .form-group {
 form .form-inner .form-group input {
   display: block;
   width: 100%;
-  padding: 10px 15px;
-  background-color: #f8f6f6;
+  padding: 10px 15px !important;
+  background-color: #8ddff8;
   border-radius: 8px;
   transition: 0.4s;
 }
@@ -77,7 +81,7 @@ form .form-inner .form-group input :focus {
 }
 form .form-inner input[type="submit"] {
   display: inline-block;
-  padding: 10px 15px;
+  padding: 10px 15px !important;
 
   border-radius: 8px;
   border-image: linear-gradient(to right, #ffce00 50%, #ffce00 50%, #fe4880);
@@ -92,7 +96,16 @@ form .form-inner input[type="submit"] :hover {
   background-position: 100% 0%;
 }
 .loginbtn {
-  width: 40%;
-  border-radius: 10px;
+  width: 45%;
+  margin-top: 20px !important;
+  margin-left: 80px !important;
+  padding: 15px !important;
+  padding-bottom: 15px !important;
+  border-radius: 15px;
   background-color: darkslateblue;
 }
+/* .socialicons {
+  margin: auto !important;
+  padding: 10px !important;
+  margin-bottom: 10px !important;
+} */

@@ -10,8 +10,11 @@ import PayPal from "./components/PayPal";
 import { useState } from "react";
 import Loginform from "./components/login/Loginform";
 import Backoffice from "./components/backoffice/Backoffice";
-import Frontoffice from "./components/frontoffice/Frontoffice";
-
+import Purchasemodal from "./components/products/Purchasemodal";
+import UserList from "./components/backoffice/userlist/UserList";
+import Sidebar from "./components/backoffice/Sidebar";
+import Userpage from "./components/backoffice/userpage/Userpage";
+import NewUser from "./components/backoffice/newuserpage/NewUser";
 function App() {
   const adminUser = {
     email: "admin@admin.com",
@@ -19,7 +22,7 @@ function App() {
   };
   const [user, setUser] = useState({ name: "", email: "" });
   const [error, setError] = useState(" ");
-
+  const [enter, setEnter] = useState(false);
   const Login = (details) => {
     console.log(details);
     if (
@@ -46,20 +49,23 @@ function App() {
     <div className="App">
       {user.email != "" ? (
         <Router>
-          <Topnav />
+          <Topnav Logout={Logout} />
 
           <Switch>
             <Route
               exact
               path="/"
               render={(routerProps) => (
-                <Homepage {...routerProps} name={user.name} Logout={Logout} />
+                <Homepage {...routerProps} name={user.name} />
               )}
             />
             <Route exact path="/Products" component={Products} />
             <Route exact path="/cart" component={Cart} />
-            <Route exact path="/checkout" component={PayPal} />
+            <Route exact path="/purchase" component={Purchasemodal} />
             <Route exact path="/backoffice" component={Backoffice} />
+            <Route exact path="/users" component={UserList} />
+            <Route exact path="/users/:userId" component={Userpage} />
+            <Route exact path="/newuser" component={NewUser} />
           </Switch>
         </Router>
       ) : (
