@@ -9,6 +9,7 @@
 .featuredItem {
   flex: 1;
   margin: 70px 20px !important ;
+  margin-bottom: 40px !important;
   padding: 20px !important;
 
   border-radius: 10px;

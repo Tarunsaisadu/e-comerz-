@@ -28,7 +28,7 @@ const Chart = () => {
   return (
     <div className="chart">
       <div className="chartcontainer">
-        <h3 className="chartTitle">user analysis</h3>
+        <h3 className="chartTitle">User Analysis</h3>
         <PieChart width={600} height={400}>
           <Pie
             dataKey="value"
@@ -48,12 +48,12 @@ const Chart = () => {
         <h3 className="chartTitle">Sales Statistics</h3>
         <div className="graphs">
           <BarChart
-            width={500}
-            height={300}
+            width={550}
+            height={400}
             data={data}
             margin={{
-              top: 60,
-              right: 50,
+              top: 80,
+              right: 40,
               left: 0,
               bottom: 0.5,
             }}

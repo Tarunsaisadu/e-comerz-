@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-family: montserrat, sans-serif;
 }
-input,
+form .form-inner .form-group input,
 button {
   appearance: none;
   background: none;
@@ -57,7 +57,7 @@ form .form-inner .form-group {
   margin-bottom: 15px !important;
 }
 
-.form-inner .form-group label {
+.form-inner .form-group .label {
   display: block;
   color: rgb(237, 237, 243);
   font-size: 12px;
@@ -65,7 +65,7 @@ form .form-inner .form-group {
   margin-bottom: 3px !important;
   transition: 0.5s;
 }
-.form-inner .form-group :focus-within label {
+.form-inner .form-group :focus-within .label {
   color: aqua;
 }
 form .form-inner .form-group input {

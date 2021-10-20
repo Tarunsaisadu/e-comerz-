@@ -36,7 +36,7 @@ const SingleProduct = ({ product }) => {
             <div class="product-desc">
               <span class="product-title">
                 {product.name}
-                <span class="badge">New</span>
+                {/* <span class="badge">New</span> */}
               </span>
 
               <span class="product-rating">
@@ -69,6 +69,8 @@ const SingleProduct = ({ product }) => {
                   <img src="https://img.icons8.com/ios/30/000000/not-applicable.png" />
                 )}
               </span>
+            </div>
+            <div className="card-footer">
               <span id="cartbtns">
                 {cart.some((p) => p.id === product.id) ? (
                   <Button
@@ -101,7 +103,7 @@ const SingleProduct = ({ product }) => {
                     disabled={!product.inStock}
                   >
                     {!product.inStock ? (
-                      <BiBlock style={{ color: "red" }} />
+                      <BiBlock style={{ color: "red", fontSize: "30px" }} />
                     ) : (
                       <lord-icon
                         src="https://cdn.lordicon.com/mecwbjnp.json"
@@ -119,50 +121,6 @@ const SingleProduct = ({ product }) => {
         </div>
       </div>
     </div>
-
-    // <div className="products">
-    //   <Card style={{ width: "18rem" }}>
-    //     <Card.Img variant="top" src={product.image} />
-    //     <Card.Body>
-    //       <Card.Title>{product.name}</Card.Title>
-    //       <Card.Subtitle style={{ paddingBottom: 10 }}>
-    //         <span>€{product.price.split(".")[0]} </span>
-    //         {product.fastDelivery ? (
-    //           <div>FAST Delivery</div>
-    //         ) : (
-    //           <div> 3days delivery</div>
-    //         )}
-    //         <Rating rating={product.ratings} />
-    //       </Card.Subtitle>
-
-    //       {cart.some((p) => p.id === product.id) ? (
-    //         <Button
-    //           variant="danger"
-    //           onClick={() => {
-    //             dispatch({
-    //               type: "REMOVE_FROM_CART",
-    //               payload: product,
-    //             });
-    //           }}
-    //         >
-    //           x
-    //         </Button>
-    //       ) : (
-    //         <Button
-    //           onClick={() => {
-    //             dispatch({
-    //               type: "ADD_TO_CART",
-    //               payload: product,
-    //             });
-    //           }}
-    //           disabled={!product.inStock}
-    //         >
-    //           {!product.inStock ? "Out Of Stock" : "add to cart"}
-    //         </Button>
-    //       )}
-    //     </Card.Body>
-    //   </Card>
-    // </div>
   );
 };
 

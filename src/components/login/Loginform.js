@@ -35,18 +35,11 @@ function Loginform({ Login, error }) {
         <div className="form-inner">
           <h2>Login</h2>
           {error != "" ? <div className="error">{error}</div> : ""}
+
           <div className="form-group">
-            {/* <label htmlFor="name">Name : </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              onChange={(e) => setDetails({ ...details, name: e.target.value })}
-              value={details.name}
-            /> */}
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email : </label>
+            <label htmlFor="email" className="label">
+              Email :{" "}
+            </label>
             <input
               type="email"
               name="email"
@@ -58,7 +51,9 @@ function Loginform({ Login, error }) {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="password">Password : </label>
+            <label htmlFor="password" className="label">
+              Password :{" "}
+            </label>
             <input
               type="password"
               name="password"
