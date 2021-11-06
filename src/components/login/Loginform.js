@@ -41,6 +41,7 @@ function Loginform({ Login, error }) {
               Email :{" "}
             </label>
             <input
+              placeholder="abc@example.com"
               type="email"
               name="email"
               id="email"
@@ -55,6 +56,7 @@ function Loginform({ Login, error }) {
               Password :{" "}
             </label>
             <input
+              placeholder="12345"
               type="password"
               name="password"
               id="password"
@@ -67,26 +69,11 @@ function Loginform({ Login, error }) {
           <Button type="submit" className="loginbtn">
             Login
           </Button>
-          {/* <div className="socialicons">
-            <img
-              className="socialitems"
-              src="https://img.icons8.com/fluency/48/000000/facebook.png"
-            />
-            <img
-              className="socialitems"
-              src="https://img.icons8.com/color/48/000000/youtube-play.png"
-            />
-            <img
-              className="socialitems"
-              src="https://img.icons8.com/color/48/000000/twitter--v2.png"
-            />
-            <img
-              className="socialitems"
-              src="https://img.icons8.com/color/48/000000/google-logo.png"
-            />
-          </div> */}
         </div>
       </form>
+      <div className="caution">
+        <h3>Enter same login details as show in input fields</h3>
+      </div>
     </div>
   );
 }

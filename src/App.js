@@ -16,10 +16,11 @@ import Sidebar from "./components/backoffice/Sidebar";
 import Userpage from "./components/backoffice/userpage/Userpage";
 import NewUser from "./components/backoffice/newuserpage/NewUser";
 function App() {
-  // const adminUser = {
-  //   email: "",
-  //   password: "admin123",
-  // };
+  const adminUser = {
+    email: "abc@example.com",
+    password: "12345",
+  };
+
   const [user, setUser] = useState({ name: "", email: "" });
   const [error, setError] = useState(" ");
   const [enter, setEnter] = useState(false);

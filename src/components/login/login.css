@@ -104,8 +104,7 @@ form .form-inner input[type="submit"] :hover {
   border-radius: 15px;
   background-color: darkslateblue;
 }
-/* .socialicons {
-  margin: auto !important;
-  padding: 10px !important;
-  margin-bottom: 10px !important;
-} */
+.caution {
+  margin-top: -600px !important;
+  margin-left: -450px !important;
+}
