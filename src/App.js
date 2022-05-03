@@ -17,8 +17,8 @@ import Userpage from "./components/backoffice/userpage/Userpage";
 import NewUser from "./components/backoffice/newuserpage/NewUser";
 function App() {
   const adminUser = {
-    email: "abc@example.com",
-    password: "12345",
+    email: "",
+    password: "",
   };
 
   const [user, setUser] = useState({ name: "", email: "" });
