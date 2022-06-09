@@ -57,7 +57,7 @@ const Topnav = ({ Logout }) => {
                 </Link>
               </li>
             </ul>
-            <div className="navbuttons ">
+            {/* <div className="navbuttons ">
               <a
                 href="#"
                 className="btn btn-outline-dark px-1 mx-2"
@@ -66,13 +66,8 @@ const Topnav = ({ Logout }) => {
                 <i class="fa fa-sign-out me-1" aria-hidden="true"></i> signout
               </a>
 
-              {/* <span>
-                <a href="#" className="btn btn-outline-dark px-1">
-                  <i class="fa fa-shopping-cart me-1" aria-hidden="true"></i>{" "}
-                  cart(0)
-                </a>
-              </span> */}
-            </div>
+             
+            </div> */}
           </div>
         </div>
       </nav>
