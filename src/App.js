@@ -15,6 +15,7 @@ import UserList from "./components/backoffice/userlist/UserList";
 import Sidebar from "./components/backoffice/Sidebar";
 import Userpage from "./components/backoffice/userpage/Userpage";
 import NewUser from "./components/backoffice/newuserpage/NewUser";
+import NewSale from "./components/newsale/NewSale";
 function App() {
   // const adminUser = {
   //   email: "abc@example.com",
@@ -62,6 +63,7 @@ function App() {
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/purchase" component={Purchasemodal} />
           <Route exact path="/backoffice" component={Backoffice} />
+          <Route exact path="/sale" component={NewSale} />
           <Route exact path="/users" component={UserList} />
           <Route exact path="/users/:userId" component={Userpage} />
           <Route exact path="/newuser" component={NewUser} />

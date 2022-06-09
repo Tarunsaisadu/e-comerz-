@@ -1,0 +1,17 @@
+.error-image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 17% !important;
+  overflow: hidden;
+}
+@media screen and (max-width: 480px) {
+  .error-image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 47% !important;
+    overflow: hidden;
+  }
+  .error-image {
+    width: 300px;
+  }
+}
